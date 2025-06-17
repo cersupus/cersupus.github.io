@@ -1,0 +1,101 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: #fefefe;
+}
+h1 {
+  text-align: center;
+}
+
+nav {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+nav button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab-content {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+#classifyImg {
+  max-width: 100%;
+  max-height: 300px;
+  margin: 10px 0;
+}
+
+#segImageCanvas, #segMaskCanvas {
+  border: 1px solid #ccc;
+  margin: 10px;
+  background: #222;
+  vertical-align: top;
+}
+
+#ticTacToeBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.cell {
+  background: #eee;
+  font-size: 64px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px #bbb;
+}
+
+.cell.disabled {
+  cursor: not-allowed;
+  color: #999;
+}
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.tab-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: #f0f0f0;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+}
+.tab-button.active {
+  background: #ddd;
+  border-color: #999;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #fafafa;
+  min-height: 150px;
+  white-space: pre-wrap;
+}
+

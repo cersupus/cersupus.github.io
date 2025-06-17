@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Обучение нейронных сетей</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.9.0/dist/tf.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 style="text-align:center; font-size:2rem; margin-bottom:1rem">Обучающий сайт по нейронным сетям</h1>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('intro', event)">Введение</button>
+    <button class="tab-button" onclick="showTab('training', event)">Обучение</button>
+    <button class="tab-button" onclick="showTab('visualization', event)">Визуализация архитектур нейронных сетей</button>
+  </div>
+  <div id="content" class="card"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Визуализация архитектур нейронных сетей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="visualization.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.9.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <h2 style="text-align:center;">Визуализация архитектур нейронных сетей</h2>
+  <div id="networks-container">
+    <section id="cnn-section" class="network-section">
+      <h3>Сверточная нейронная сеть (CNN)</h3>
+      <canvas id="cnn-canvas" width="400" height="200"></canvas>
+    </section>
+    <section id="transformer-section" class="network-section">
+      <h3>Трансформер (Transformer)</h3>
+      <canvas id="transformer-canvas" width="400" height="250"></canvas>
+    </section>
+    <section id="rnn-section" class="network-section">
+      <h3>Рекуррентная нейронная сеть (RNN)</h3>
+      <canvas id="rnn-canvas" width="400" height="200"></canvas>
+    </section>
+  </div>
+  <script src="visualization.js"></script>
+</body>
+</html>

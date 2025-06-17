@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Нейросети: классификация, сегментация, ИИ крестики-нолики</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Нейросети на сайте</h1>
+
+  <nav>
+    <button class="tab-btn" data-tab="classification">Классификация (собака/кошка)</button>
+    <button class="tab-btn" data-tab="segmentation">Сегментация изображения</button>
+    <button class="tab-btn" data-tab="tictactoe">Игровой ИИ (крестики-нолики)</button>
+  </nav>
+
+  <section id="classification" class="tab-content active">
+    <h2>Классификация изображений (Собака / Кошка)</h2>
+    <input type="file" id="classifyUpload" accept="image/*" />
+    <br />
+    <img id="classifyImg" alt="Загруженное изображение" />
+    <br />
+    <button id="classifyBtn">Классифицировать</button>
+    <p id="classifyResult"></p>
+  </section>
+
+  <section id="segmentation" class="tab-content">
+    <h2>Сегментация изображения (BodyPix)</h2>
+    <input type="file" id="segmentUpload" accept="image/*" />
+    <br />
+    <canvas id="segImageCanvas" width="512" height="512"></canvas>
+    <canvas id="segMaskCanvas" width="512" height="512"></canvas>
+    <br />
+    <button id="segmentBtn">Сегментировать</button>
+  </section>
+
+  <section id="tictactoe" class="tab-content">
+    <h2>Игровой ИИ — Крестики-нолики</h2>
+    <div id="ticTacToeBoard" class="board"></div>
+    <p id="ticTacToeStatus">Ход игрока (X)</p>
+    <button id="ticTacToeResetBtn">Новая игра</button>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.18.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0.5/dist/body-pix.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
