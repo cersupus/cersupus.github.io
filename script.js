@@ -1,31 +1,25 @@
 const content = document.getElementById("content");
 
-    function showTab(tab, event) {
-      document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-      event.target.classList.add("active");
-      if (tab === "intro") {
-        content.innerHTML = `
-          <p>
-Нейронная сеть — это последовательность нейронов, соединенных между собой синапсами. Структура нейронной сети пришла в мир программирования прямиком из биологии. Благодаря такой структуре, машина обретает способность анализировать и даже запоминать различную информацию. Нейронные сети также способны не только анализировать входящую информацию, но и воспроизводить ее из своей памяти. Другими словами, нейросеть это машинная интерпретация мозга человека, в котором находятся миллионы нейронов передающих информацию в виде электрических импульсов.
-Нейронные сети используются для решения сложных задач, которые требуют аналитических вычислений подобных тем, что делает человеческий мозг. Самыми распространенными применениями нейронных сетей является:
-Классификация — распределение данных по параметрам. Например, на вход дается набор людей и нужно решить, кому из них давать кредит, а кому нет. Эту работу может сделать нейронная сеть, анализируя такую информацию как: возраст, платежеспособность, кредитная история и тд.
-Предсказание — возможность предсказывать следующий шаг. Например, рост или падение акций, основываясь на ситуации на фондовом рынке.
-Распознавание — в настоящее время, самое широкое применение нейронных сетей. Используется в Google, когда вы ищете фото или в камерах телефонов, когда оно определяет положение вашего лица и выделяет его и многое другое.
-          </p>`;
-      }  else if (tab === "training") {
-  content.innerHTML = `
-    <p>Обучение модели на простом примере (y = 2x - 1)</p>
-    <pre id="output"></pre>
-    <hr style="margin: 1rem 0;" />
-    <iframe src="neron/index.html" style="width:100%; height:900px; border:none; border-radius: 12px;"></iframe>
-        `;
-      trainModel();
-      setupDigitCanvas();
-      } else if (tab === "visualization") {
-        // Загружаем визуализацию через iframe
-        content.innerHTML = '<iframe src="visualization/visualization.html" style="width:100%; height:900px; border:none; border-radius: 12px;"></iframe>';
-      }
-    }
+function showTab(tab, event) {
+  document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+  event.target.classList.add("active");
+
+  if (tab === "training") {
+    content.innerHTML = `
+      <p>Обучение модели на простом примере (y = 2x - 1)</p>
+      <pre id="output"></pre>
+      <hr style="margin: 1rem 0;" />
+      <iframe src="neron/index.html" style="width:100%; height:900px; border:none; border-radius: 12px;"></iframe>
+    `;
+    trainModel();
+    setupDigitCanvas();
+  } else if (tab === "visualization") {
+    content.innerHTML = '<iframe src="visualization/visualization.html" style="width:100%; height:900px; border:none; border-radius: 12px;"></iframe>';
+  } else if (tab === "intro") {
+  const intro = document.querySelector('#intro-content');
+  content.innerHTML = intro ? intro.innerHTML : '<p>Секция "Введение" не найдена</p>';
+  }
+}
 
     async function trainModel() {
       const output = document.getElementById("output");
@@ -123,7 +117,7 @@ function predictDigit() {
 }
 
 
-showTab("intro", {target: document.querySelector(".tab-button")});
+showTab("intro", {target: document.querySelector(".tab-button.active")});
 
 let net;
 const imageElement = document.getElementById('inputImage');
@@ -155,4 +149,8 @@ async function classifyImage() {
     `Результат: ${top.className} (${(top.probability * 100).toFixed(2)}%)`;
 }
 
-window.onload = loadModel;
+window.onload = () => {
+  loadModel();
+  const firstTabButton = document.querySelector(".tab-button");
+  showTab("intro", { target: firstTabButton });
+};

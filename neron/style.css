@@ -1,9 +1,10 @@
 body {
   font-family: sans-serif;
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+  padding: 1rem;
+  max-width: 2000px;
+  margin: 0;
   background: #fefefe;
+  box-sizing: border-box;
 }
 h1 {
   text-align: center;
@@ -77,16 +78,30 @@ nav button {
   margin-bottom: 1rem;
   justify-content: center;
 }
-.tab-button {
+button{
   padding: 0.5rem 1rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   background: #f0f0f0;
   cursor: pointer;
   user-select: none;
   font-weight: 600;
+  transition: background 0.3s ease;
 }
-.tab-button.active {
+.tab-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: #f0f0f0;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.tab-btn.active,
+.tab-btn:hover {
   background: #ddd;
   border-color: #999;
 }
