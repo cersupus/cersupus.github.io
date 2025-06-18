@@ -61,6 +61,32 @@ iframe {
   height: auto;
   border-radius: 10px;
 }
+.networks-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+.networks-list h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.net-item {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.net-item a {
+  font-weight: 600;
+  color: #4285f4;
+  text-decoration: none;
+}
+.net-item p {
+  margin: 0.5rem 0 0;
+  color: #333;
+  line-height: 1.4;
+}
 @media (max-width: 600px) {
   .tab-button {
     width: 100%;
@@ -77,5 +103,8 @@ iframe {
 
   .card {
     padding: 0.75rem;
+  }
+  .net-item {
+    padding: 0.5rem;
   }
 }

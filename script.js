@@ -6,7 +6,13 @@ function showTab(tab, event) {
 
   if (tab === "training") {
     content.innerHTML = `
-      <p>Обучение модели на простом примере (y = 2x - 1)</p>
+      <p>Обучение модели на простом примере (y = 2x - 1) — это базовый пример, где нейронная сеть учится находить зависимость между входными и выходными данными по простой линейной формуле. В данном случае, функция y = 2x - 1 — это правило, по которому для любого значения x нужно вычислить y.
+
+Во время обучения модель получает набор примеров (вход x и правильный выход y), и пытается подстроить свои параметры так, чтобы предсказывать правильные значения как можно точнее.
+
+Эпоха — это один проход по всему обучающему набору данных. Чем больше эпох, тем дольше модель учится и потенциально становится точнее.
+
+Потери — это мера ошибки модели на текущем этапе обучения. Чем меньше значение потерь, тем точнее модель предсказывает результаты.</p>
       <pre id="output"></pre>
       <hr style="margin: 1rem 0;" />
       <iframe src="neron/index.html" style="width:100%; height:900px; border:none; border-radius: 12px;"></iframe>
@@ -17,6 +23,9 @@ function showTab(tab, event) {
     content.innerHTML = '<iframe src="visualization/visualization.html" style="width:100%; height:900px; border:none; border-radius: 12px;"></iframe>';
   } else if (tab === "intro") {
   const intro = document.querySelector('#intro-content');
+  content.innerHTML = intro ? intro.innerHTML : '<p>Секция "Введение" не найдена</p>';
+  } else if (tab === "networks") {
+  const intro = document.querySelector('#free-content');
   content.innerHTML = intro ? intro.innerHTML : '<p>Секция "Введение" не найдена</p>';
   }
 }

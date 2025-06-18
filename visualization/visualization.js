@@ -90,12 +90,33 @@ function drawRNN(ctx) {
   ctx.fillText('y', 345, 95);
 }
 
-window.onload = function() {
-  const cnnCtx = document.getElementById('cnn-canvas').getContext('2d');
-  const transformerCtx = document.getElementById('transformer-canvas').getContext('2d');
-  const rnnCtx = document.getElementById('rnn-canvas').getContext('2d');
+function resizeCanvas(canvas) {
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  return ctx;
+}
+
+function drawAll() {
+  const cnnCanvas = document.getElementById('cnn-canvas');
+  const transformerCanvas = document.getElementById('transformer-canvas');
+  const rnnCanvas = document.getElementById('rnn-canvas');
+
+  const cnnCtx = resizeCanvas(cnnCanvas);
+  const transformerCtx = resizeCanvas(transformerCanvas);
+  const rnnCtx = resizeCanvas(rnnCanvas);
 
   drawCNN(cnnCtx);
   drawTransformer(transformerCtx);
   drawRNN(rnnCtx);
-};
+}
+
+window.onload = drawAll;
+window.onresize = drawAll;
+

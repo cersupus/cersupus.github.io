@@ -5,22 +5,23 @@
   <title>Визуализация архитектур нейронных сетей</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="visualization.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.9.0/dist/tf.min.js"></script>
 </head>
 <body>
   <h2 style="text-align:center;">Визуализация архитектур нейронных сетей</h2>
   <div id="networks-container">
     <section id="cnn-section" class="network-section">
-      <h3>Сверточная нейронная сеть (CNN)</h3>
-      <canvas id="cnn-canvas" width="400" height="200"></canvas>
+      <p>Сверточная нейронная сеть (CNN) — это тип нейросети, разработанный для обработки данных с сетчатой структурой, таких как изображения. Она использует свёртки — специальные фильтры, которые автоматически извлекают важные признаки из изображений, например края, формы и текстуры. CNN широко применяется в задачах компьютерного зрения: распознавании лиц, классификации изображений, медицинской диагностике, автономном вождении.</p>
+      <canvas id="cnn-canvas" width="600" height="150"></canvas>
     </section>
     <section id="transformer-section" class="network-section">
-      <h3>Трансформер (Transformer)</h3>
-      <canvas id="transformer-canvas" width="400" height="250"></canvas>
+      <p>Трансформер — это архитектура, пришедшая на смену RNN в задачах обработки последовательностей. Он основан на механизме внимания (attention), который позволяет эффективно обрабатывать длинные зависимости без необходимости последовательного прохода, как в RNN. Трансформеры стали основой современных языковых моделей, таких как GPT, и активно применяются в обработке естественного языка, генерации кода, перевода, резюмирования и даже в задачах работы с изображениями и биологическими данными.</p>
+      <canvas id="transformer-canvas" width="600" height="200"></canvas>
     </section>
     <section id="rnn-section" class="network-section">
-      <h3>Рекуррентная нейронная сеть (RNN)</h3>
-      <canvas id="rnn-canvas" width="400" height="200"></canvas>
+      <p>Рекуррентная нейронная сеть (RNN) предназначена для работы с последовательными данными, в которых важен порядок элементов, например текст, речь или временные ряды. Благодаря наличию обратных связей, RNN может учитывать информацию из предыдущих шагов, что делает её полезной в машинном переводе, генерации текста, распознавании речи и анализе временных зависимостей.</p>
+      <canvas id="rnn-canvas" width="600" height="150"></canvas>
     </section>
   </div>
   <script src="visualization.js"></script>

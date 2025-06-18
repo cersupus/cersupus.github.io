@@ -1,9 +1,17 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 1rem;
-  max-width: 900px;
+  max-width: 2000px;
+  margin: 0;
+  background: #fefefe;
+  box-sizing: border-box;
+  font-size: 16px;
   margin: auto;
-  background: #f9f9f9;
+}
+p {
+  margin: 1rem auto;
+  padding: 0 1rem;
+  font-size: 20px;
 }
 h2 {
   margin-bottom: 1rem;
@@ -21,9 +29,11 @@ h2 {
   text-align: center;
 }
 canvas {
+  width: 100%;
+  height: auto;
+  max-width: 600px; 
   border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
   display: block;
-  margin: auto;
+  margin: 0 auto 20px auto;
 }
+
