@@ -92,12 +92,16 @@ function drawRNN(ctx) {
 
 function resizeCanvas(canvas) {
   const dpr = window.devicePixelRatio || 1;
-  const rect = canvas.getBoundingClientRect();
+  const containerWidth = canvas.parentElement.clientWidth;
+  const desiredHeight = canvas.id === 'transformer-canvas' ? 220 : 160;
 
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
+  canvas.width = containerWidth * dpr;
+  canvas.height = desiredHeight * dpr;
+  canvas.style.width = containerWidth + 'px';
+  canvas.style.height = desiredHeight + 'px';
 
   const ctx = canvas.getContext('2d');
+  ctx.setTransform(1, 0, 0, 1, 0, 0); // сброс масштабов
   ctx.scale(dpr, dpr);
 
   return ctx;

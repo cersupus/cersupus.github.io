@@ -92,13 +92,12 @@ iframe {
     width: 100%;
     font-size: 1rem;
   }
-
   h1 {
     font-size: 1.25rem;
   }
 
   body {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .card {
