@@ -20,7 +20,7 @@ function showTab(tab, event) {
     trainModel();
     setupDigitCanvas();
   } else if (tab === "visualization") {
-    content.innerHTML = '<iframe src="visualization/visualization.html" style="width:100%; height:3600px; border:none; border-radius: 12px; @media (max-width: 600px):height:100%;"></iframe>';
+    content.innerHTML = '<iframe src="visualization/visualization.html" style="width:100%; max-height: 100%; display: block; height: 4000px; border:none; border-radius: 12px;"></iframe>';
   } else if (tab === "intro") {
   const intro = document.querySelector('#intro-content');
   content.innerHTML = intro ? intro.innerHTML : '<p>Секция "Введение" не найдена</p>';
